@@ -13,11 +13,11 @@ export default function App() {
   //Create the callback functions in the class itself.
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((s) => s + 1);
   }
 
   function handlePrev() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
   }
 
   // function close() {
@@ -25,8 +25,8 @@ export default function App() {
   // }
 
   return (
-    <div>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+    <>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
 
@@ -58,6 +58,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
